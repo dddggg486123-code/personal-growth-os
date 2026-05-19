@@ -1,14 +1,18 @@
-const CACHE_NAME = 'growth-os-v2';
+const CACHE_NAME = 'growth-os-v3';
+const BASE = '/personal-growth-os';
 const ASSETS = [
-  '/',
-  '/fitness',
-  '/learn',
-  '/reflect',
-  '/identity',
-  '/brief',
-  '/brain',
-  '/settings',
-  '/manifest.json',
+  BASE + '/',
+  BASE + '/quests',
+  BASE + '/fitness',
+  BASE + '/learn',
+  BASE + '/reflect',
+  BASE + '/identity',
+  BASE + '/brief',
+  BASE + '/brain',
+  BASE + '/settings',
+  BASE + '/timeline',
+  BASE + '/prompts',
+  BASE + '/manifest.json',
 ];
 
 self.addEventListener('install', (event) => {
@@ -27,6 +31,12 @@ self.addEventListener('activate', (event) => {
       );
     }).then(() => self.clients.claim())
   );
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener('fetch', (event) => {

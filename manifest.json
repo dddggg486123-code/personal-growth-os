@@ -2,7 +2,8 @@
   "name": "Personal Growth OS — 个人成长操作系统",
   "short_name": "Growth OS",
   "description": "一点点变强 — 帮助长期稳定成长的私人数字空间",
-  "start_url": "/",
+  "start_url": "/personal-growth-os/",
+  "scope": "/personal-growth-os/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#0f0f0f",
@@ -10,13 +11,13 @@
   "lang": "zh-CN",
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "/personal-growth-os/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/personal-growth-os/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
