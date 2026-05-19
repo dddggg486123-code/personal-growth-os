@@ -104,3 +104,41 @@ export interface Achievement {
 }
 
 export type LogsMap = Record<string, DailyLog>;
+
+// Morning Brief types
+export type BriefCategory = 'ai' | 'tech' | 'growth' | 'trend' | 'personalized';
+
+export interface BriefItem {
+  id: string;
+  category: BriefCategory;
+  title: string;
+  summary: string;
+  url?: string;
+  tags: string[];
+}
+
+export interface RadarItem {
+  title: string;
+  description: string;
+  category: 'tool' | 'model' | 'trend' | 'career';
+  impact: 'low' | 'medium' | 'high';
+}
+
+export interface DailyBrief {
+  date: string;
+  items: BriefItem[];
+  dailyQuestion: string;
+  futureRadar: RadarItem[];
+}
+
+// Second Brain types
+export interface Note {
+  id: string;
+  title: string;
+  content: string;
+  tags: string[];
+  links: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+

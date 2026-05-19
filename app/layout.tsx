@@ -18,13 +18,25 @@ export default function RootLayout({
     document.documentElement.classList.toggle('dark', darkMode);
   }, [darkMode]);
 
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  }, []);
+
   return (
     <html lang="zh-CN" className={darkMode ? 'dark' : ''}>
       <head>
         <title>Personal Growth OS — 一点点变强</title>
-        <meta name="description" content="帮助长期稳定成长的个人操作系统" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="帮助长期稳定成长的私人数字空间" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#6366f1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Growth OS" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
       </head>
       <body className="min-h-screen flex" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <Sidebar />
