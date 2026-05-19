@@ -20,7 +20,7 @@ export default function RootLayout({
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
+      navigator.serviceWorker.register('/personal-growth-os/sw.js').catch(() => {});
     }
   }, []);
 
@@ -34,9 +34,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Growth OS" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="icon" href="/personal-growth-os/favicon.ico" />
+        <link rel="manifest" href="/personal-growth-os/manifest.json" />
+        <link rel="apple-touch-icon" href="/personal-growth-os/icons/icon-192.png" />
       </head>
       <body className="min-h-screen flex" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <Sidebar />
